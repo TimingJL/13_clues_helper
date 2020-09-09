@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import Content from "./Content";
+import FullScreenDialog from "./FullScreenDialog";
 
 const MainPageContainer = styled.div`
   height: 100vh;
@@ -18,13 +19,25 @@ const ContentWrapper = styled.div`
 `;
 
 const MainPage = (props) => {
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+
+  const handleOnOpenDialog = () => {
+    setIsDialogOpen(true);
+  };
+
+  const handleOnCloseDialog = () => {
+    setIsDialogOpen(false);
+  };
   return (
-    <MainPageContainer>
-      <Header />
-      <ContentWrapper>
-        <Content {...props} />
-      </ContentWrapper>
-    </MainPageContainer>
+    <>
+      <MainPageContainer>
+        <Header handleOnOpenDialog={handleOnOpenDialog} />
+        <ContentWrapper>
+          <Content {...props} />
+        </ContentWrapper>
+      </MainPageContainer>
+      <FullScreenDialog open={isDialogOpen} handleClose={handleOnCloseDialog} />
+    </>
   );
 };
 

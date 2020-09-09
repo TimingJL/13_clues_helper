@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function Header() {
+export default function Header({ handleOnOpenDialog }) {
   const classes = useStyles();
 
   return (
@@ -29,6 +29,7 @@ export default function Header() {
           className={classes.menuButton}
           color="inherit"
           aria-label="menu"
+          onClick={handleOnOpenDialog}
         >
           <MenuIcon />
         </IconButton>
