@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/13_clues_helper/static/css/main.df18e7ce.chunk.css",
-    "main.js": "/13_clues_helper/static/js/main.db96741e.chunk.js",
-    "main.js.map": "/13_clues_helper/static/js/main.db96741e.chunk.js.map",
+    "main.js": "/13_clues_helper/static/js/main.bd4a917e.chunk.js",
+    "main.js.map": "/13_clues_helper/static/js/main.bd4a917e.chunk.js.map",
     "runtime-main.js": "/13_clues_helper/static/js/runtime-main.28075f96.js",
     "runtime-main.js.map": "/13_clues_helper/static/js/runtime-main.28075f96.js.map",
     "static/css/2.e6cf9162.chunk.css": "/13_clues_helper/static/css/2.e6cf9162.chunk.css",
     "static/js/2.cc231199.chunk.js": "/13_clues_helper/static/js/2.cc231199.chunk.js",
     "static/js/2.cc231199.chunk.js.map": "/13_clues_helper/static/js/2.cc231199.chunk.js.map",
     "index.html": "/13_clues_helper/index.html",
-    "precache-manifest.7c7e4ad2fb57e42663ac906541c7a4f2.js": "/13_clues_helper/precache-manifest.7c7e4ad2fb57e42663ac906541c7a4f2.js",
+    "precache-manifest.7fef2c2558c03605f4882aa81813ad44.js": "/13_clues_helper/precache-manifest.7fef2c2558c03605f4882aa81813ad44.js",
     "service-worker.js": "/13_clues_helper/service-worker.js",
     "static/css/2.e6cf9162.chunk.css.map": "/13_clues_helper/static/css/2.e6cf9162.chunk.css.map",
     "static/css/main.df18e7ce.chunk.css.map": "/13_clues_helper/static/css/main.df18e7ce.chunk.css.map",
@@ -25,6 +25,6 @@
     "static/css/2.e6cf9162.chunk.css",
     "static/js/2.cc231199.chunk.js",
     "static/css/main.df18e7ce.chunk.css",
-    "static/js/main.db96741e.chunk.js"
+    "static/js/main.bd4a917e.chunk.js"
   ]
 }
