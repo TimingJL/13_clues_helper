@@ -1,14 +1,14 @@
 const color = {
-  purple: "#716BA9",
-  pink: "#D6B3D5",
-  red: "#9A4646",
-  green: "#348475",
-  yellow: "#CABF66",
-  blue: "#385E93",
-  orange: "#9A6540",
-  white: "#CAC6BA",
-  brown: "#322517",
-  gray: "#545046",
+  purple: "#B682C6",
+  pink: "#E2ABC3",
+  red: "#E52E25",
+  green: "#0FAB2B",
+  yellow: "#F2DF0D",
+  blue: "#2F8EE1",
+  orange: "#F89D19",
+  white: "#EDECE6",
+  brown: "#A66025",
+  gray: "#BAB8B1",
 };
 
 const persons = [
