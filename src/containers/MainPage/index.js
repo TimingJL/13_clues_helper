@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import backgroundImagePath from "assets/images/backgroundImage.jpg";
 import Header from "./Header";
@@ -23,7 +23,11 @@ const ContentWrapper = styled.div`
 `;
 
 const MainPage = (props) => {
-  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [player, setPlayer] = useState(2);
+  const handleOnChangePlayer = (event) => {
+    setPlayer(event.target.value);
+  };
 
   const handleOnOpenDialog = () => {
     setIsDialogOpen(true);
@@ -35,9 +39,13 @@ const MainPage = (props) => {
   return (
     <>
       <MainPageContainer>
-        <Header handleOnOpenDialog={handleOnOpenDialog} />
+        <Header
+          handleOnOpenDialog={handleOnOpenDialog}
+          player={player}
+          handleOnChangePlayer={handleOnChangePlayer}
+        />
         <ContentWrapper>
-          <Content {...props} />
+          <Content {...props} player={player} />
         </ContentWrapper>
       </MainPageContainer>
       <FullScreenDialog open={isDialogOpen} handleClose={handleOnCloseDialog} />
