@@ -32,16 +32,36 @@ function App() {
     ...weapon,
     isEnable: true,
   }));
+  const [noteContent, setNoteContent] = useState("");
   const [cardsState, setCardsState] = useState({
     persons,
     locations,
     weapons,
     colorNames: data.colorNames,
   });
+
+  const handleOnResetGame = () => {
+    setCardsState({
+      persons,
+      locations,
+      weapons,
+      colorNames: data.colorNames,
+    });
+    setNoteContent("");
+  };
+
   return (
     <MainPageContainer>
       <div id="wrapper">
-        <MainPage cardsState={cardsState} setCardsState={setCardsState} />
+        <MainPage
+          cardsState={cardsState}
+          setCardsState={setCardsState}
+          handleOnResetGame={handleOnResetGame}
+          noteProps={{
+            noteContent,
+            setNoteContent,
+          }}
+        />
       </div>
       <div id="warning-message">
         <GameInfo />

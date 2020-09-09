@@ -25,6 +25,7 @@ const ContentWrapper = styled.div`
 const MainPage = (props) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [player, setPlayer] = useState(2);
+  const { handleOnResetGame, noteProps } = props;
   const handleOnChangePlayer = (event) => {
     setPlayer(event.target.value);
   };
@@ -36,6 +37,7 @@ const MainPage = (props) => {
   const handleOnCloseDialog = () => {
     setIsDialogOpen(false);
   };
+
   return (
     <>
       <MainPageContainer>
@@ -43,12 +45,17 @@ const MainPage = (props) => {
           handleOnOpenDialog={handleOnOpenDialog}
           player={player}
           handleOnChangePlayer={handleOnChangePlayer}
+          handleOnResetGame={handleOnResetGame}
         />
         <ContentWrapper>
           <Content {...props} player={player} />
         </ContentWrapper>
       </MainPageContainer>
-      <FullScreenDialog open={isDialogOpen} handleClose={handleOnCloseDialog} />
+      <FullScreenDialog
+        open={isDialogOpen}
+        handleClose={handleOnCloseDialog}
+        noteProps={noteProps}
+      />
     </>
   );
 };

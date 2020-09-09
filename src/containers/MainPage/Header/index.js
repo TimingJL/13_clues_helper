@@ -5,6 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import NoteIcon from "assets/icons/NoteIcon";
+import ResetIcon from "assets/icons/ResetIcon";
+import Button from "@material-ui/core/Button";
 import PlayerSelect from "./PlayerSelect";
 
 const useStyles = makeStyles(() => ({
@@ -18,12 +20,18 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     alignItems: "center",
   },
+  resetButton: {
+    marginRight: 16,
+    color: "white",
+    border: "1px solid white",
+  },
 }));
 
 export default function Header({
   handleOnOpenDialog,
   player,
   handleOnChangePlayer,
+  handleOnResetGame,
 }) {
   const classes = useStyles();
 
@@ -34,10 +42,19 @@ export default function Header({
           13 Clues
         </Typography>
         <div className={classes.buttonsGroup}>
+          <Button
+            variant="outlined"
+            color="default"
+            size="small"
+            className={classes.resetButton}
+            startIcon={<ResetIcon />}
+            onClick={handleOnResetGame}
+          >
+            重新開始
+          </Button>
           <PlayerSelect player={player} handleChange={handleOnChangePlayer} />
           <IconButton
             edge="start"
-            className={classes.menuButton}
             color="inherit"
             aria-label="menu"
             onClick={handleOnOpenDialog}

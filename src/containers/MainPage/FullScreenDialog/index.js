@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -45,14 +45,14 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function FullScreenDialog({ open, handleClose }) {
+export default function FullScreenDialog({ open, handleClose, noteProps }) {
   const classes = useStyles();
-  const [value, setValue] = useState("");
+  const { noteContent, setNoteContent } = noteProps;
   const handleOnChangeValue = (event) => {
-    setValue(event.target.value);
+    setNoteContent(event.target.value);
   };
   const handleOnCleanNote = () => {
-    setValue("");
+    setNoteContent("");
   };
 
   return (
@@ -84,7 +84,7 @@ export default function FullScreenDialog({ open, handleClose }) {
         <TextareaAutosize
           rows={10}
           placeholder="筆記本..."
-          value={value}
+          value={noteContent}
           onChange={handleOnChangeValue}
           className={classes.textArea}
         />
