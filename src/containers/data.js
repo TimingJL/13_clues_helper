@@ -112,7 +112,7 @@ const weapons = [
   { name: { zhtw: "毒藥", en: "Poison" }, isUpclose: true, color: color.red },
   {
     name: { zhtw: "長劍", en: "Sword" },
-    isUpclose: false,
+    isUpclose: true,
     color: color.green,
   },
   {
@@ -127,7 +127,7 @@ const weapons = [
   },
   {
     name: { zhtw: "手槍", en: "Gun" },
-    isUpclose: true,
+    isUpclose: false,
     color: color.orange,
   },
   {
