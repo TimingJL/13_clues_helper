@@ -11,6 +11,19 @@ const color = {
   gray: "#BAB8B1",
 };
 
+const colorNames = [
+  { zhtw: "紫色", en: "Purple" },
+  { zhtw: "粉紅", en: "Pink" },
+  { zhtw: "紅色", en: "Red" },
+  { zhtw: "綠色", en: "Green" },
+  { zhtw: "黃色", en: "Yellow" },
+  { zhtw: "藍色", en: "Blue" },
+  { zhtw: "橘色", en: "Orange" },
+  { zhtw: "白色", en: "White" },
+  { zhtw: "棕色", en: "Brown" },
+  { zhtw: "灰色", en: "Gray" },
+];
+
 const persons = [
   {
     name: { zhtw: "軍官", en: "Officer" },
@@ -134,4 +147,4 @@ const weapons = [
   },
 ];
 
-export default { persons, locations, weapons };
+export default { persons, locations, weapons, colorNames };
