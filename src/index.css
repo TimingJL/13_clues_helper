@@ -31,12 +31,12 @@ html, body {
 }
 
 @media only screen and (orientation: portrait) {
-	html {
+	html, body {
 		background: black;
 	}
 }
 @media only screen and (orientation: landscape) {
-	html {
+	html, body {
 		background: white;
 	}
 }

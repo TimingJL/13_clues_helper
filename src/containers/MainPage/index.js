@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import styled from "styled-components";
 import Header from "./Header";
@@ -16,12 +17,12 @@ const ContentWrapper = styled.div`
   align-items: center;
 `;
 
-const MainPage = () => {
+const MainPage = (props) => {
   return (
     <MainPageContainer>
       <Header />
       <ContentWrapper>
-        <Content />
+        <Content {...props} />
       </ContentWrapper>
     </MainPageContainer>
   );
