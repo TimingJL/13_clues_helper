@@ -32,7 +32,7 @@ const GridBlock = styled.div`
   }}
   ${(props) => {
     if (!props.isEnable) {
-      return "opacity: 0.1;";
+      return "opacity: 0.15;";
     }
     return null;
   }}
@@ -76,6 +76,10 @@ const TextWrapper = styled.span`
   margin-bottom: 6px;
 `;
 
+const TextHeader = styled.div`
+  margin-top: 12px;
+`;
+
 const HEIGHT_CARD = 80;
 
 const Content = ({ cardsState, setCardsState }) => {
@@ -102,11 +106,11 @@ const Content = ({ cardsState, setCardsState }) => {
     <MainPageContainer>
       <GridContainer>
         <GridBlock isEnable>
-          <div>
+          <TextHeader>
             <div>角色</div>
             <div>Male</div>
             <div>Female</div>
-          </div>
+          </TextHeader>
         </GridBlock>
         {persons.map((person) => (
           <GridBlock
@@ -129,11 +133,11 @@ const Content = ({ cardsState, setCardsState }) => {
       </GridContainer>
       <GridContainer>
         <GridBlock isEnable>
-          <div>
+          <TextHeader>
             <div>地點</div>
             <div>Indoor</div>
             <div>Outdoor</div>
-          </div>
+          </TextHeader>
         </GridBlock>
         {locations.map((location) => (
           <GridBlock
@@ -162,11 +166,11 @@ const Content = ({ cardsState, setCardsState }) => {
       </GridContainer>
       <GridContainer>
         <GridBlock isEnable>
-          <div>
+          <TextHeader>
             <div>武器</div>
             <div>UpClose</div>
             <div>Ranged</div>
-          </div>
+          </TextHeader>
         </GridBlock>
         {weapons.map((weapon) => (
           <GridBlock

@@ -4,11 +4,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import NoteIcon from "assets/icons/NoteIcon";
 
 const useStyles = makeStyles(() => ({
   appBar: {
-    background: "#c99950",
+    background: "linear-gradient(to right, #AE4D2F, #3F2117)",
   },
   title: {
     flexGrow: 1,
@@ -31,7 +31,7 @@ export default function Header({ handleOnOpenDialog }) {
           aria-label="menu"
           onClick={handleOnOpenDialog}
         >
-          <MenuIcon />
+          <NoteIcon />
         </IconButton>
       </Toolbar>
     </AppBar>
