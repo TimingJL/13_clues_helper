@@ -10,6 +10,7 @@ import RangedIcon from "assets/icons/RangedIcon";
 const MainPageContainer = styled.div`
   font-size: 12px;
   width: calc(100% - 10px);
+  max-width: 800px;
 `;
 
 const GridContainer = styled.div`
@@ -42,8 +43,9 @@ const GridBlock = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
   &:active {
-    opacity: 0.8;
+    opacity: 0.5;
   }
 `;
 
