@@ -26,7 +26,7 @@ const GridContainer = styled.div`
     if (props.height) {
       return `height: ${props.height}px;`;
     }
-    return `height: 25%;`;
+    return `height: 80px;`;
   }}
   &:not(:last-child) {
     margin-bottom: 2px;
