@@ -9,7 +9,8 @@ import RangedIcon from "assets/icons/RangedIcon";
 
 const MainPageContainer = styled.div`
   font-size: 12px;
-  width: calc(100% - 10px);
+  padding: 0px 24px;
+  width: 100%;
   height: 100%;
 
   display: flex;
@@ -21,6 +22,12 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 50px repeat(${(props) => props.cardsNumber}, 1fr);
   grid-gap: 2px;
+  ${(props) => {
+    if (props.height) {
+      return `height: ${props.height}px;`;
+    }
+    return `height: 25%;`;
+  }}
   &:not(:last-child) {
     margin-bottom: 2px;
   }
@@ -29,9 +36,6 @@ const GridContainer = styled.div`
 const GridBlock = styled.div`
   color: ${(props) => props.textColor};
   background-color: ${(props) => props.backgroundColor};
-  /* height: 100%; */
-  /* height: calc((85vh) / 3); */
-  max-height: 180px;
   min-height: 20px;
   ${(props) => {
     if (props.height) {
@@ -226,7 +230,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
             </GridBlock>
           ))}
       </GridContainer>
-      <GridContainer cardsNumber={cardsNumber}>
+      <GridContainer cardsNumber={cardsNumber} height={20}>
         <GridBlock height={20} />
         {colorNames
           .filter((item, index) => index < cardsNumber)
