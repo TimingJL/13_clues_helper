@@ -10,12 +10,16 @@ import RangedIcon from "assets/icons/RangedIcon";
 const MainPageContainer = styled.div`
   font-size: 12px;
   width: calc(100% - 10px);
-  max-width: 800px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(${(props) => props.cardsNumber + 1}, 1fr);
+  grid-template-columns: 50px repeat(${(props) => props.cardsNumber}, 1fr);
   grid-gap: 2px;
   &:not(:last-child) {
     margin-bottom: 2px;
@@ -25,6 +29,10 @@ const GridContainer = styled.div`
 const GridBlock = styled.div`
   color: ${(props) => props.textColor};
   background-color: ${(props) => props.backgroundColor};
+  /* height: 100%; */
+  /* height: calc((85vh) / 3); */
+  max-height: 180px;
+  min-height: 20px;
   ${(props) => {
     if (props.height) {
       return `height: ${props.height}px;`;
@@ -82,8 +90,6 @@ const TextHeader = styled.div`
   margin-top: 12px;
 `;
 
-const HEIGHT_CARD = 80;
-
 const getCards = (player) => {
   if (player === 2) {
     return 6;
@@ -138,7 +144,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
               key={person.name.en}
               textColor="#fff"
               backgroundColor={person.color}
-              height={HEIGHT_CARD}
+              // height={HEIGHT_CARD}
               isEnable={person.isEnable}
               onClick={() => handleOnClick("persons", persons, person.name.en)}
             >
@@ -167,7 +173,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
               key={location.name.en}
               textColor="#fff"
               backgroundColor={location.color}
-              height={HEIGHT_CARD}
+              // height={HEIGHT_CARD}
               isEnable={location.isEnable}
               onClick={() =>
                 handleOnClick("locations", locations, location.name.en)
@@ -202,7 +208,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
               key={weapon.name.en}
               textColor="#fff"
               backgroundColor={weapon.color}
-              height={HEIGHT_CARD}
+              // height={HEIGHT_CARD}
               isEnable={weapon.isEnable}
               onClick={() => handleOnClick("weapons", weapons, weapon.name.en)}
             >
@@ -221,7 +227,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
           ))}
       </GridContainer>
       <GridContainer cardsNumber={cardsNumber}>
-        <GridBlock />
+        <GridBlock height={20} />
         {colorNames
           .filter((item, index) => index < cardsNumber)
           .map((colorName) => (
@@ -229,6 +235,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
               key={colorName.en}
               style={{ lineHeight: "20px" }}
               isEnable
+              height={20}
             >
               {colorName.zhtw}
             </GridBlock>
