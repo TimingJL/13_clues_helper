@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a3d2bbcf006749d3a4da55fb1df6b8de",
+    "revision": "b68c355dca14a01445d627a0a9af3648",
     "url": "/13_clues_helper/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/13_clues_helper/static/css/2.e6cf9162.chunk.css"
   },
   {
-    "revision": "a3a2003e2532339fc85b",
+    "revision": "888bd436cb8cd2442bf6",
     "url": "/13_clues_helper/static/css/main.df18e7ce.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/13_clues_helper/static/js/2.cc231199.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a3a2003e2532339fc85b",
-    "url": "/13_clues_helper/static/js/main.00f6fe0f.chunk.js"
+    "revision": "888bd436cb8cd2442bf6",
+    "url": "/13_clues_helper/static/js/main.f89e6375.chunk.js"
   },
   {
     "revision": "d45936075881cd229873",
