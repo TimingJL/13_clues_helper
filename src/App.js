@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import MainPage from "containers/MainPage";
 import GameInfo from "containers/GameInfo";
@@ -22,8 +22,11 @@ const MainPageContainer = styled.div`
   }
 `;
 
-function App() {
-  const persons = data.persons.map((person) => ({ ...person, isEnable: true }));
+const App = () => {
+  const persons = data.persons.map((person) => ({
+    ...person,
+    isEnable: true,
+  }));
   const locations = data.locations.map((location) => ({
     ...location,
     isEnable: true,
@@ -40,7 +43,7 @@ function App() {
     colorNames: data.colorNames,
   });
 
-  const handleOnResetGame = () => {
+  const handleOnResetGame = useCallback(() => {
     setCardsState({
       persons,
       locations,
@@ -48,7 +51,7 @@ function App() {
       colorNames: data.colorNames,
     });
     setNoteContent("");
-  };
+  }, [locations, persons, weapons]);
 
   return (
     <MainPageContainer>
@@ -68,6 +71,6 @@ function App() {
       </div>
     </MainPageContainer>
   );
-}
+};
 
 export default App;

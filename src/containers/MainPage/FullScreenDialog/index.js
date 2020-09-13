@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -45,50 +45,60 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function FullScreenDialog({ open, handleClose, noteProps }) {
-  const classes = useStyles();
-  const { noteContent, setNoteContent } = noteProps;
-  const handleOnChangeValue = (event) => {
-    setNoteContent(event.target.value);
-  };
-  const handleOnCleanNote = () => {
-    setNoteContent("");
-  };
+const FullScreenDialog = memo(
+  ({ open, handleClose, noteProps }) => {
+    const classes = useStyles();
+    const { noteContent, setNoteContent } = noteProps;
+    const handleOnChangeValue = (event) => {
+      setNoteContent(event.target.value);
+    };
+    const handleOnCleanNote = () => {
+      setNoteContent("");
+    };
 
-  return (
-    <Dialog
-      fullScreen
-      open={open}
-      onClose={handleClose}
-      TransitionComponent={Transition}
-    >
-      <AppBar className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            onClick={handleClose}
-            aria-label="close"
-          >
-            <CloseIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Note
-          </Typography>
-          <Button autoFocus color="inherit" onClick={handleOnCleanNote}>
-            Clean
-          </Button>
-        </Toolbar>
-      </AppBar>
-      <TextArea>
-        <TextareaAutosize
-          rows={10}
-          placeholder="筆記本..."
-          value={noteContent}
-          onChange={handleOnChangeValue}
-          className={classes.textArea}
-        />
-      </TextArea>
-    </Dialog>
-  );
-}
+    return (
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+      >
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleClose}
+              aria-label="close"
+            >
+              <CloseIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Note
+            </Typography>
+            <Button autoFocus color="inherit" onClick={handleOnCleanNote}>
+              Clean
+            </Button>
+          </Toolbar>
+        </AppBar>
+        <TextArea>
+          <TextareaAutosize
+            rows={10}
+            placeholder="筆記本..."
+            value={noteContent}
+            onChange={handleOnChangeValue}
+            className={classes.textArea}
+          />
+        </TextArea>
+      </Dialog>
+    );
+  },
+  (prevProps, nextProps) => {
+    return (
+      prevProps.open === nextProps.open &&
+      prevProps.noteProps.noteContent === nextProps.noteProps.noteContent
+    );
+  }
+);
+
+export default FullScreenDialog;
