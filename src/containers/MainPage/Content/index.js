@@ -6,6 +6,7 @@ import InDoorIcon from "assets/icons/InDoorIcon";
 import OutDoorIcon from "assets/icons/OutDoorIcon";
 import UpCloseIcon from "assets/icons/UpCloseIcon";
 import RangedIcon from "assets/icons/RangedIcon";
+import Card from "./Card";
 
 const MainPageContainer = styled.div`
   font-size: 12px;
@@ -81,15 +82,6 @@ const IconWrapper = styled.div`
   margin-top: 6px;
 `;
 
-const Text = styled.div`
-  text-shadow: 0px 0px 4px #fff;
-  color: black;
-`;
-
-const TextWrapper = styled.span`
-  margin-bottom: 6px;
-`;
-
 const TextHeader = styled.div`
   margin-top: 12px;
 `;
@@ -144,21 +136,18 @@ const Content = ({ cardsState, setCardsState, player }) => {
         {persons
           .filter((item, index) => index < cardsNumber)
           .map((person) => (
-            <GridBlock
+            <Card
               key={person.name.en}
-              textColor="#fff"
-              backgroundColor={person.color}
-              isEnable={person.isEnable}
-              onClick={() => handleOnClick("persons", persons, person.name.en)}
-            >
-              <IconWrapper>
-                <Icon icon={person.isMale ? iconMalePath : iconFemalePath} />
-              </IconWrapper>
-              <TextWrapper>
-                <Text>{person.name.zhtw}</Text>
-                <Text>{person.name.en}</Text>
-              </TextWrapper>
-            </GridBlock>
+              data={person}
+              handleOnClick={() =>
+                handleOnClick("persons", persons, person.name.en)
+              }
+              icon={
+                <IconWrapper>
+                  <Icon icon={person.isMale ? iconMalePath : iconFemalePath} />
+                </IconWrapper>
+              }
+            />
           ))}
       </GridContainer>
       <GridContainer cardsNumber={cardsNumber}>
@@ -172,27 +161,22 @@ const Content = ({ cardsState, setCardsState, player }) => {
         {locations
           .filter((item, index) => index < cardsNumber)
           .map((location) => (
-            <GridBlock
+            <Card
               key={location.name.en}
-              textColor="#fff"
-              backgroundColor={location.color}
-              isEnable={location.isEnable}
-              onClick={() =>
+              data={location}
+              handleOnClick={() =>
                 handleOnClick("locations", locations, location.name.en)
               }
-            >
-              <IconWrapper>
-                {location.isIndoor ? (
-                  <InDoorIcon htmlColor="#000" />
-                ) : (
-                  <OutDoorIcon htmlColor="#000" />
-                )}
-              </IconWrapper>
-              <TextWrapper>
-                <Text>{location.name.zhtw}</Text>
-                <Text>{location.name.en}</Text>
-              </TextWrapper>
-            </GridBlock>
+              icon={
+                <IconWrapper>
+                  {location.isIndoor ? (
+                    <InDoorIcon htmlColor="#000" />
+                  ) : (
+                    <OutDoorIcon htmlColor="#000" />
+                  )}
+                </IconWrapper>
+              }
+            />
           ))}
       </GridContainer>
       <GridContainer cardsNumber={cardsNumber}>
@@ -206,25 +190,22 @@ const Content = ({ cardsState, setCardsState, player }) => {
         {weapons
           .filter((item, index) => index < cardsNumber)
           .map((weapon) => (
-            <GridBlock
+            <Card
               key={weapon.name.en}
-              textColor="#fff"
-              backgroundColor={weapon.color}
-              isEnable={weapon.isEnable}
-              onClick={() => handleOnClick("weapons", weapons, weapon.name.en)}
-            >
-              <IconWrapper>
-                {weapon.isUpclose ? (
-                  <UpCloseIcon htmlColor="#000" />
-                ) : (
-                  <RangedIcon fontSize="small" htmlColor="#000" />
-                )}
-              </IconWrapper>
-              <TextWrapper>
-                <Text>{weapon.name.zhtw}</Text>
-                <Text>{weapon.name.en}</Text>
-              </TextWrapper>
-            </GridBlock>
+              data={weapon}
+              handleOnClick={() =>
+                handleOnClick("weapons", weapons, weapon.name.en)
+              }
+              icon={
+                <IconWrapper>
+                  {weapon.isUpclose ? (
+                    <UpCloseIcon htmlColor="#000" />
+                  ) : (
+                    <RangedIcon fontSize="small" htmlColor="#000" />
+                  )}
+                </IconWrapper>
+              }
+            />
           ))}
       </GridContainer>
       <GridContainer cardsNumber={cardsNumber} height={20}>
