@@ -9,6 +9,7 @@ import RangedIcon from "assets/icons/RangedIcon";
 import Card from "./Card";
 
 const MainPageContainer = styled.div`
+  z-index: 1;
   font-size: 12px;
   padding: 0px 24px;
   width: 100%;
