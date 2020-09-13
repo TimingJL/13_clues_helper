@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/13_clues_helper/static/css/main.df18e7ce.chunk.css",
-    "main.js": "/13_clues_helper/static/js/main.f89e6375.chunk.js",
-    "main.js.map": "/13_clues_helper/static/js/main.f89e6375.chunk.js.map",
+    "main.js": "/13_clues_helper/static/js/main.68a0114e.chunk.js",
+    "main.js.map": "/13_clues_helper/static/js/main.68a0114e.chunk.js.map",
     "runtime-main.js": "/13_clues_helper/static/js/runtime-main.28075f96.js",
     "runtime-main.js.map": "/13_clues_helper/static/js/runtime-main.28075f96.js.map",
     "static/css/2.e6cf9162.chunk.css": "/13_clues_helper/static/css/2.e6cf9162.chunk.css",
-    "static/js/2.cc231199.chunk.js": "/13_clues_helper/static/js/2.cc231199.chunk.js",
-    "static/js/2.cc231199.chunk.js.map": "/13_clues_helper/static/js/2.cc231199.chunk.js.map",
+    "static/js/2.8ab82da0.chunk.js": "/13_clues_helper/static/js/2.8ab82da0.chunk.js",
+    "static/js/2.8ab82da0.chunk.js.map": "/13_clues_helper/static/js/2.8ab82da0.chunk.js.map",
     "index.html": "/13_clues_helper/index.html",
-    "precache-manifest.9ae081624f568e98f90f810860d808ec.js": "/13_clues_helper/precache-manifest.9ae081624f568e98f90f810860d808ec.js",
+    "precache-manifest.8e59edc4e6bb1c39fae6177317b47868.js": "/13_clues_helper/precache-manifest.8e59edc4e6bb1c39fae6177317b47868.js",
     "service-worker.js": "/13_clues_helper/service-worker.js",
     "static/css/2.e6cf9162.chunk.css.map": "/13_clues_helper/static/css/2.e6cf9162.chunk.css.map",
     "static/css/main.df18e7ce.chunk.css.map": "/13_clues_helper/static/css/main.df18e7ce.chunk.css.map",
-    "static/js/2.cc231199.chunk.js.LICENSE.txt": "/13_clues_helper/static/js/2.cc231199.chunk.js.LICENSE.txt",
+    "static/js/2.8ab82da0.chunk.js.LICENSE.txt": "/13_clues_helper/static/js/2.8ab82da0.chunk.js.LICENSE.txt",
     "static/media/13_clues.png": "/13_clues_helper/static/media/13_clues.7edc5876.png",
     "static/media/backgroundImage.jpg": "/13_clues_helper/static/media/backgroundImage.4f480002.jpg",
     "static/media/game_accessories.jpg": "/13_clues_helper/static/media/game_accessories.a69582d6.jpg",
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.28075f96.js",
     "static/css/2.e6cf9162.chunk.css",
-    "static/js/2.cc231199.chunk.js",
+    "static/js/2.8ab82da0.chunk.js",
     "static/css/main.df18e7ce.chunk.css",
-    "static/js/main.f89e6375.chunk.js"
+    "static/js/main.68a0114e.chunk.js"
   ]
 }

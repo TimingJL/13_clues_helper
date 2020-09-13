@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b68c355dca14a01445d627a0a9af3648",
+    "revision": "d395afee87c4b5fe5c625f231da528f2",
     "url": "/13_clues_helper/index.html"
   },
   {
-    "revision": "c4d7d4ecf7b115772ce6",
+    "revision": "4cb1faedf16fa629d409",
     "url": "/13_clues_helper/static/css/2.e6cf9162.chunk.css"
   },
   {
-    "revision": "888bd436cb8cd2442bf6",
+    "revision": "3a00725cf4dd666307c6",
     "url": "/13_clues_helper/static/css/main.df18e7ce.chunk.css"
   },
   {
-    "revision": "c4d7d4ecf7b115772ce6",
-    "url": "/13_clues_helper/static/js/2.cc231199.chunk.js"
+    "revision": "4cb1faedf16fa629d409",
+    "url": "/13_clues_helper/static/js/2.8ab82da0.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/13_clues_helper/static/js/2.cc231199.chunk.js.LICENSE.txt"
+    "url": "/13_clues_helper/static/js/2.8ab82da0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "888bd436cb8cd2442bf6",
-    "url": "/13_clues_helper/static/js/main.f89e6375.chunk.js"
+    "revision": "3a00725cf4dd666307c6",
+    "url": "/13_clues_helper/static/js/main.68a0114e.chunk.js"
   },
   {
     "revision": "d45936075881cd229873",
