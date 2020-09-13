@@ -148,7 +148,6 @@ const Content = ({ cardsState, setCardsState, player }) => {
               key={person.name.en}
               textColor="#fff"
               backgroundColor={person.color}
-              // height={HEIGHT_CARD}
               isEnable={person.isEnable}
               onClick={() => handleOnClick("persons", persons, person.name.en)}
             >
@@ -177,7 +176,6 @@ const Content = ({ cardsState, setCardsState, player }) => {
               key={location.name.en}
               textColor="#fff"
               backgroundColor={location.color}
-              // height={HEIGHT_CARD}
               isEnable={location.isEnable}
               onClick={() =>
                 handleOnClick("locations", locations, location.name.en)
@@ -212,7 +210,6 @@ const Content = ({ cardsState, setCardsState, player }) => {
               key={weapon.name.en}
               textColor="#fff"
               backgroundColor={weapon.color}
-              // height={HEIGHT_CARD}
               isEnable={weapon.isEnable}
               onClick={() => handleOnClick("weapons", weapons, weapon.name.en)}
             >

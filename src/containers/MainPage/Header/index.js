@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/display-name */
+import React, { memo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -27,42 +28,43 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function Header({
-  handleOnOpenDialog,
-  player,
-  handleOnChangePlayer,
-  handleOnResetGame,
-}) {
-  const classes = useStyles();
+const Header = memo(
+  ({ handleOnOpenDialog, player, handleOnChangePlayer, handleOnResetGame }) => {
+    const classes = useStyles();
+    return (
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            13 Clues
+          </Typography>
+          <div className={classes.buttonsGroup}>
+            <Button
+              variant="outlined"
+              color="default"
+              size="small"
+              className={classes.resetButton}
+              startIcon={<ResetIcon />}
+              onClick={handleOnResetGame}
+            >
+              重新開始
+            </Button>
+            <PlayerSelect player={player} handleChange={handleOnChangePlayer} />
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleOnOpenDialog}
+            >
+              <NoteIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+    );
+  },
+  (prevProps, nextProps) => {
+    return prevProps.player === nextProps.player;
+  }
+);
 
-  return (
-    <AppBar position="static" className={classes.appBar}>
-      <Toolbar>
-        <Typography variant="h6" className={classes.title}>
-          13 Clues
-        </Typography>
-        <div className={classes.buttonsGroup}>
-          <Button
-            variant="outlined"
-            color="default"
-            size="small"
-            className={classes.resetButton}
-            startIcon={<ResetIcon />}
-            onClick={handleOnResetGame}
-          >
-            重新開始
-          </Button>
-          <PlayerSelect player={player} handleChange={handleOnChangePlayer} />
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleOnOpenDialog}
-          >
-            <NoteIcon />
-          </IconButton>
-        </div>
-      </Toolbar>
-    </AppBar>
-  );
-}
+export default Header;
