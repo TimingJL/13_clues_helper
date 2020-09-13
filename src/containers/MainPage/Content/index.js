@@ -102,24 +102,37 @@ const getCards = (player) => {
   return 10;
 };
 
+const updateData = (data, name) => {
+  const newData = data.map((datum) => {
+    if (datum.name.en === name) {
+      return { ...datum, isEnable: !datum.isEnable };
+    }
+    return datum;
+  });
+  return newData;
+};
+
 const Content = ({ cardsState, setCardsState, player }) => {
   const { persons, locations, weapons, colorNames } = cardsState;
   const cardsNumber = getCards(player);
-  const handleOnClick = (keyword, data, name) => {
-    const newData = data.map((item) => {
-      if (item.name.en === name) {
-        return { ...item, isEnable: !item.isEnable };
-      }
-      return item;
-    });
+  const handleOnClick = (keyword, name) => {
     if (keyword === "persons") {
-      setCardsState((prev) => ({ ...prev, persons: newData }));
+      setCardsState((prev) => {
+        const newPersons = updateData(prev.persons, name);
+        return { ...prev, persons: newPersons };
+      });
     }
     if (keyword === "locations") {
-      setCardsState((prev) => ({ ...prev, locations: newData }));
+      setCardsState((prev) => {
+        const newLocations = updateData(prev.locations, name);
+        return { ...prev, locations: newLocations };
+      });
     }
     if (keyword === "weapons") {
-      setCardsState((prev) => ({ ...prev, weapons: newData }));
+      setCardsState((prev) => {
+        const newWeapons = updateData(prev.weapons, name);
+        return { ...prev, weapons: newWeapons };
+      });
     }
   };
 
@@ -139,9 +152,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
             <Card
               key={person.name.en}
               data={person}
-              handleOnClick={() =>
-                handleOnClick("persons", persons, person.name.en)
-              }
+              handleOnClick={() => handleOnClick("persons", person.name.en)}
               icon={
                 <IconWrapper>
                   <Icon icon={person.isMale ? iconMalePath : iconFemalePath} />
@@ -164,9 +175,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
             <Card
               key={location.name.en}
               data={location}
-              handleOnClick={() =>
-                handleOnClick("locations", locations, location.name.en)
-              }
+              handleOnClick={() => handleOnClick("locations", location.name.en)}
               icon={
                 <IconWrapper>
                   {location.isIndoor ? (
@@ -193,9 +202,7 @@ const Content = ({ cardsState, setCardsState, player }) => {
             <Card
               key={weapon.name.en}
               data={weapon}
-              handleOnClick={() =>
-                handleOnClick("weapons", weapons, weapon.name.en)
-              }
+              handleOnClick={() => handleOnClick("weapons", weapon.name.en)}
               icon={
                 <IconWrapper>
                   {weapon.isUpclose ? (
