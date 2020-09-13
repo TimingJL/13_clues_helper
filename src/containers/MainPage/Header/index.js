@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import React, { memo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";

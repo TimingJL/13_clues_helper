@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import ImageGallery from "react-image-gallery";
 import gameImagePath from "./images/13_clues.png";
@@ -42,20 +42,22 @@ const Info = styled.div`
   line-height: 36px;
 `;
 
-const GameInfo = () => (
-  <Container>
-    <Info>
-      請將手機旋轉至
-      <br />
-      「橫向模式」開始遊戲
-    </Info>
-    <ImageGallery
-      items={images}
-      showThumbnails={false}
-      showFullscreenButton={false}
-      showPlayButton={false}
-    />
-  </Container>
-);
+const GameInfo = memo(() => {
+  return (
+    <Container>
+      <Info>
+        請將手機旋轉至
+        <br />
+        「橫向模式」開始遊戲
+      </Info>
+      <ImageGallery
+        items={images}
+        showThumbnails={false}
+        showFullscreenButton={false}
+        showPlayButton={false}
+      />
+    </Container>
+  );
+});
 
 export default GameInfo;
